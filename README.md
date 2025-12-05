@@ -1,7 +1,7 @@
 # Microservice Server(CI/CD with jenkins)
 
-A lightweight microservices-based system built with Node.js, Express, MongoDB, and RabbitMQ, fully containerized with Docker.
-The project includes an automated CI/CD pipeline powered by Jenkins, also running inside Docker, which builds, tests, and deploys all microservices using Docker images.
+A lightweight microservices-based system built with Node.js, Express, MongoDB, and RabbitMQ, fully containerized with **Docker**.
+The project includes an automated **CI/CD pipeline** powered by Jenkins, also running inside Docker, which builds, tests, and deploys all microservices using Docker images.
 
 This setup demonstrates a real-world microservice architecture with event-driven communication, centralized pipeline automation, and seamless containerized deployment.
 
@@ -101,7 +101,7 @@ http://localhost:8080
 
 Jenkins automatically fetches your `Jenkinsfile` from the GitHub repo.
 
-Steps:
+Steps[Pipeline SCM](https://www.jenkins.io/doc/book/pipeline/getting-started/#defining-a-pipeline-in-scm):
 
 1. Open Jenkins → **New Item**
 2. Select **Pipeline**
