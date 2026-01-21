@@ -1,0 +1,38 @@
+# This is a workflow of github action. 
+name: Microservices CI with github-action
+
+on:
+  push:
+    branches: ["github-action"]
+  pull_request:
+    branches: ["github-action"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        service:
+          - task-services
+          - user-services
+          - notification-services
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ matrix.service }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.service }}
+        run: npm ci
+
+      - name: Run tests
+        working-directory: ${{ matrix.service }}
+        run: npm test
+
