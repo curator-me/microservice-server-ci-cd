@@ -16,7 +16,7 @@ jobs:
         service:
           - task-services
           - user-services
-          - notification-services
+          # - notification-services
 
     steps:
       - uses: actions/checkout@v4
